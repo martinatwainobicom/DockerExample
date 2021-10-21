@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+    mymatomo:
+        image: matomo
+        ports:
+            - 80:80
+        networks:
+            - mynetwork
+networks:
+    mynetwork:

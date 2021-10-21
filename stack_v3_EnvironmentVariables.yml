@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+    mymatomo:
+        image: matomo
+        ports:
+            - 80:80
+        networks:
+            - mynetwork
+    mydatabase:
+        image: mysql
+        networks:
+            - mynetwork
+        environment:
+            MYSQL_ROOT_PASSWORD: my-secret-root-pw
+            MYSQL_DATABASE: matomo_db
+            MYSQL_USER: matomo_user
+            MYSQL_PASSWORD: my-secret-matomo-pw
+        command:
+            --default-authentication-plugin=mysql_native_password
+networks:
+    mynetwork:
