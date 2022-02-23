@@ -13,15 +13,13 @@ services:
         networks:
             - mynetwork
     mydatabase:
-        image: mysql
+        image: mariadb
         networks:
             - mynetwork
         environment:
-            MYSQL_ROOT_PASSWORD: my-secret-root-pw
-            MYSQL_DATABASE: matomo_db
-            MYSQL_USER: matomo_user
-            MYSQL_PASSWORD: my-secret-matomo-pw
-        command:
-            --default-authentication-plugin=mysql_native_password
+            MARIADB_ROOT_PASSWORD: my-secret-root-pw
+            MARIADB_DATABASE: matomo_db
+            MARIADB_USER: matomo_user
+            MARIADB_PASSWORD: my-secret-matomo-pw
 networks:
     mynetwork:

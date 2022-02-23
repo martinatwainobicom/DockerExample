@@ -1,8 +1,8 @@
 version: "3.8"
-# This version fails to startup the mysql database container
+# This version fails to startup MariaDB database container
 # Look at the log output to find out why
 # Use "docker ps -a" to list all (including stopped) containers
-# Use "docker logs [cointainerid]" to find out why mysql is not starting up
+# Use "docker logs [cointainerid]" to find out why MariaDB is not starting up
 services:
     mymatomo:
         image: matomo
@@ -11,7 +11,7 @@ services:
         networks:
             - mynetwork
     mydatabase:
-        image: mysql
+        image: mariadb
         networks:
             - mynetwork
 networks:
